@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <import type="android.view.View" />
         <variable
             name="movie"
             type="anjelloatoz.com.nodestest.ViewModel.MovieViewModel"/>
     </data>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="anjelloatoz.com.nodestest.View.MovieListActivity"
@@ -43,4 +46,5 @@
         android:onClick="@{(v) -> movie.addToFavorites()}"/>
 
 </LinearLayout>
+    </ScrollView>
 </layout>
