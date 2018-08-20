@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data class="MovieitemBinding">
+        <variable
+            name="movie"
+            type="anjelloatoz.com.nodestest.ViewModel.MovieViewModel"/>
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent" android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/thumbnail_iv"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_alignParentLeft="true"
+    android:layout_margin="5dp"
+    app:imageUrl="@{movie.imageUrl}"
+    android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/movie_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/thumbnail_iv"
+        android:text="@{movie.title}"/>
+
+    <TextView
+        android:id="@+id/movie_release_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/movie_title_tv"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/thumbnail_iv"
+        android:text="@{movie.release_date}"/>
+
+</RelativeLayout>
+</layout>
