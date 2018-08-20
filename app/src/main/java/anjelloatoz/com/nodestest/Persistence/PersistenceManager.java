@@ -50,7 +50,12 @@ public class PersistenceManager {
 
     public ArrayList<Movie> getFavorites(){
         SharedPreferences sharedPrefs = this.context.getSharedPreferences(FAVORITES_KEY, MODE_PRIVATE);
-        return gson.fromJson(sharedPrefs.getString(FAVORITES_KEY, ""), new TypeToken<ArrayList<Movie>>() {}.getType());
+        ArrayList<Movie> fav_list = gson.fromJson(sharedPrefs.getString(FAVORITES_KEY, ""), new TypeToken<ArrayList<Movie>>() {}.getType());
+        if(fav_list == null){
+            fav_list = new ArrayList<Movie>();
+        }
+
+        return fav_list;
     }
 
     public void addToFavorites(Movie movie){
